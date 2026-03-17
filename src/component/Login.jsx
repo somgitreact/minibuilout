@@ -28,10 +28,16 @@ const Login = () => {
        :
         <form onSubmit={checkHandler}>
 <label htmlFor='username' > Username 
-    <input id ="username" type='text' value={input?.user} onChange={(e)=>setInput((prev)=>({...prev, user: e.target.value}))} />
+    <input  data-testid="Username"
+  id="username"
+  type="text"
+  value={input.user} onChange={(e)=>setInput((prev)=>({...prev, user: e.target.value}))} />
 </label>
 <label htmlFor='pass' >  Password
-    <input id ="pass"  type='password' value={input?.pass} onChange={(e)=>setInput((prev)=>({...prev, pass: e.target.value}))} />
+    <input  data-testid="Password"
+  id="pass"
+  type="password"
+  value={input.pass} onChange={(e)=>setInput((prev)=>({...prev, pass: e.target.value}))} />
 </label>
 <button> submit</button>
         </form>
