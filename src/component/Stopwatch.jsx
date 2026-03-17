@@ -9,7 +9,18 @@ const Stopwatch = () => {
     const startstop = ()=>{
     if(run){
  countref.current = setInterval(() => {     
-        setIncNum((prev)=>({...prev, sec: prev.sec + 1}))
+        // setIncNum((prev)=>({...prev, sec: prev.sec + 1}))
+        setIncNum((prev) => {
+  let newSec = prev.sec + 1
+  let newMin = prev.min
+
+  if (newSec === 60) {
+    newMin += 1
+    newSec = 0
+  }
+
+  return { min: newMin, sec: newSec }
+})
         
     }, 1000);
     setRun(false)
@@ -22,16 +33,16 @@ setRun(true)
      const reset = ()=>{
 setIncNum({min:0,sec:0})
     }
-    useEffect(()=>{
-        function setmin(){
-        if(incNum.sec >= 60){
-             setIncNum((prev)=>({...prev, min: prev.min + 1}))
-             setIncNum((prev)=>({...prev, sec: 0}))
+//     useEffect(()=>{
+//         function setmin(){
+//         if(incNum.sec >= 60){
+//              setIncNum((prev)=>({...prev, min: prev.min + 1}))
+//              setIncNum((prev)=>({...prev, sec: 0}))
              
-        }    
-        }
-setmin()
-    },[incNum])
+//         }    
+//         }
+// setmin()
+//     },[incNum])
 const formattedSec = String(incNum.sec).padStart(2, '0')
   return (
     <div> 
