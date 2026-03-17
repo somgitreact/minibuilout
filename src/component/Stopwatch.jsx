@@ -24,7 +24,7 @@ setIncNum({min:0,sec:0})
     }
     useEffect(()=>{
         function setmin(){
-        if(incNum.sec > 60){
+        if(incNum.sec >= 60){
              setIncNum((prev)=>({...prev, min: prev.min + 1}))
              setIncNum((prev)=>({...prev, sec: 0}))
              
@@ -32,11 +32,11 @@ setIncNum({min:0,sec:0})
         }
 setmin()
     },[incNum])
-
+const formattedSec = String(incNum.sec).padStart(2, '0')
   return (
     <div> 
-        <h2>Stop Watch</h2>
-        <p>Time: {incNum.min} : {incNum.sec}</p>
+        <h2>Stopwatch</h2>
+        <p>Time: {incNum.min}:{formattedSec}</p>
         <br/>
         <button type='button' onClick={startstop}>{run ? 'Start' : 'Stop'}</button>
         <button type='button' onClick={reset}>Reset</button>
