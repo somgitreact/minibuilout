@@ -20,7 +20,7 @@ setRun(true)
  }
     }
      const reset = ()=>{
-setIncNum(0)
+setIncNum({min:0,sec:0})
     }
     useEffect(()=>{
         function setmin(){
