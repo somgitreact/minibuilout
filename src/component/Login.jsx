@@ -27,10 +27,10 @@ const Login = () => {
        {match ?  <h3>Welcome User!</h3>  
        :
         <form onSubmit={checkHandler}>
-<label htmlFor='username' > USERNAME : 
+<label htmlFor='username' > Username : 
     <input id ="username" type='text' value={input?.user} onChange={(e)=>setInput((prev)=>({...prev, user: e.target.value}))} />
 </label>
-<label htmlFor='pass' >  PASSWOR : 
+<label htmlFor='pass' >  Password : 
     <input id ="pass"  type='password' value={input?.pass} onChange={(e)=>setInput((prev)=>({...prev, pass: e.target.value}))} />
 </label>
 <button> submit</button>
