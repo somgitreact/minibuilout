@@ -5,6 +5,7 @@ import heroImg from './assets/hero.png'
 import './App.css'
 import Login from './component/Login'
 import Stopwatch from './component/Stopwatch'
+import Weatherapp from './component/Weatherapp'
 
 function App() {
 
@@ -12,7 +13,8 @@ function App() {
   return (
     <>
     {/* <Login /> */}
-        <Stopwatch />
+        {/* <Stopwatch /> */}
+        <Weatherapp />
     </>
   )
 }

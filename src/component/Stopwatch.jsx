@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from 'react'
+import React, {  useRef, useState } from 'react'
 
 const Stopwatch = () => {
     const [incNum, setIncNum] = useState({min:0,sec:0})
