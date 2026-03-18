@@ -6,46 +6,52 @@ const Weatherapp = () => {
     const [loding, setLoding] = useState(false)
 
 
-const weatherHandler = async () => {
-    // 1. Fix typo: setLoading
-    setLoding(true); 
-    try {
-        // 2. Use https and environment variables for the API key
-        const API_KEY = "1e4f46609e1542188a1131622261703"; 
-        const res = await fetch(`https://api.weatherapi.com${API_KEY}&q=${inputData}&aqi=yes`);
-        console.log("------", res.json());
+// const weatherHandler = async () => {
+//     // 1. Fix typo: setLoading
+//     setLoding(true); 
+//     try {
+//         // 2. Use https and environment variables for the API key
+//         const API_KEY = "1e4f46609e1542188a1131622261703"; 
+//         const res = await fetch(`https://api.weatherapi.com${API_KEY}&q=${inputData}&aqi=yes`);
+//         console.log("------", res.json());
         
-        // 3. Check if the response is actually successful
+//         // 3. Check if the response is actually successful
+//         if (!res.ok) {
+//             throw new Error(`Failed to fetch weather data 11 ${res.status} ${res.statusText}`); //${res.status} ${res.statusText}
+//         }
+
+//         const weather = await res.json();
+//         setData(weather.current);
+        
+//     } catch (error) {
+//         // 4. Fix typo: error.message
+//         console.error("Fetch Error:", error.message);
+//         alert('Failed to fetch weather data');           
+//     } finally {
+//         setLoding(false);
+//     }        
+// };
+const API_KEY = "1e4f46609e1542188a1131622261703";
+const weatherHandler = async ()=>{ 
+    setLoding(true) 
+    try { 
+        const res = await fetch(`http://api.weatherapi.com/v1/current.json?key=${API_KEY}&q=${inpudata}&aqi=yes`) 
+        console.log(res.status ,res.statusText);
+        
         if (!res.ok) {
-            throw new Error(`Failed to fetch weather data 11 ${res.status} ${res.statusText}`); //${res.status} ${res.statusText}
-        }
-
-        const weather = await res.json();
-        setData(weather.current);
-        
-    } catch (error) {
-        // 4. Fix typo: error.message
-        console.error("Fetch Error:", error.message);
-        alert('Failed to fetch weather data');           
-    } finally {
-        setLoding(false);
-    }        
-};
-
-// const weatherHandler = async ()=>{ 
-//     setLoding(true) 
-//     try { const res = await fetch(`http://api.weatherapi.com/v1/current.json?key=1e4f46609e1542188a1131622261703&q=${inpudata}&aqi=yes`) 
-// const wether = await res.json() 
-// // console.log("------data", wether.current); 
-// setData(wether.current) 
-// } 
-// catch (error) { 
-//     console.log("dd===", error.massage); 
-//     alert(error.massage) 
-// } 
-// finally { 
-//     setLoding(false) 
-// } }
+             throw new Error(`Failed to fetch weather data`); //${res.status} ${res.statusText}
+         }
+const wether = await res.json() 
+ console.log("------data", wether.current); 
+setData(wether.current) 
+} 
+catch (error) { 
+    console.log("dd===", error.message); 
+    alert(error.message) 
+} 
+finally { 
+    setLoding(false) 
+} }
 
   return (
     <div className='backcolr'>
