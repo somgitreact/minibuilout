@@ -6,6 +6,7 @@ import './App.css'
 import Login from './component/Login'
 import Stopwatch from './component/Stopwatch'
 import Weatherapp from './component/Weatherapp'
+import Spellcheck from './component/Spellcheck'
 
 function App() {
 
@@ -14,7 +15,8 @@ function App() {
     <>
     {/* <Login /> */}
         {/* <Stopwatch /> */}
-        <Weatherapp />
+        {/* <Weatherapp /> */}
+        <Spellcheck />
     </>
   )
 }
