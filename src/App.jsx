@@ -15,8 +15,8 @@ function App() {
     <>
     {/* <Login /> */}
         {/* <Stopwatch /> */}
-        {/* <Weatherapp /> */}
-        <Spellcheck />
+        <Weatherapp />
+        {/* <Spellcheck /> */}
     </>
   )
 }
