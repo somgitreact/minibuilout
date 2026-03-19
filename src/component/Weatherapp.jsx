@@ -33,7 +33,7 @@ const Weatherapp = () => {
 // };
 const API_KEY = "1e4f46609e1542188a1131622261703";
 const weatherHandler = async ()=>{ 
-    setData('') 
+    setData('')   
     setLoding(true) 
     try { 
         const res = await fetch(`http://api.weatherapi.com/v1/current.json?key=${API_KEY}&q=${inpudata}&aqi=yes`) 
