@@ -61,7 +61,7 @@ finally {
             <button className='btnclor' onClick={weatherHandler}>Search </button>
             </div>
 {loding ?  
-            <div className='loding'>Loading data…</div>
+            <div className='loding'>Loading data...</div>
 :
             <div className='weather-cards'>
                 { data &&  <>
