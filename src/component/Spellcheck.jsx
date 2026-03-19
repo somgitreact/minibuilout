@@ -30,7 +30,7 @@ const keyobj = Object.keys(customDictionary)
 //      ftchdata()
 // },[inputText])
 useEffect(() => {
-    const words = inputText.trim().split(/\s+/)
+    const words = inputText.toLowerCase().trim().split(/\s+/)
 
     let found = ''
 function ftchdata(){
@@ -45,7 +45,7 @@ function ftchdata(){
 }
 ftchdata()
   }, [inputText])
-console.log(suggestedText);
+console.log(inputText.toLowerCase(), suggestedText);
 
   return (
      <div>
