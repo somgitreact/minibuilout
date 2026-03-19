@@ -36,7 +36,7 @@ const weatherHandler = async ()=>{
     setData('')   
     setLoding(true) 
     try { 
-        const res = await fetch(`http://api.weatherapi.com/v1/current.json?key=${API_KEY}&q=${inpudata}&aqi=yes`) 
+        const res = await fetch(`https://api.weatherapi.com/v1/current.json?key=${API_KEY}&q=${inpudata}&aqi=yes`) 
         console.log(res.status ,res.statusText);
         
         if (!res.ok) {
